@@ -10,6 +10,7 @@ import xyz.acrylicstyle.antigooglemaps.plugin.util.BlockUtil.isTrue
 object CheckBlockBreakListener: EventListener<BlockBreakEvent> {
     override fun handle(e: BlockBreakEvent) {
         if (e.player.gameMode != GameMode.SURVIVAL) return
+        if (e.player.hasPermission("antigooglemaps.admin")) return
         val period = AntiGoogleMaps.instance.config.getInt("blocks.${e.block.type.name}.period", 0)
         val threshold = AntiGoogleMaps.instance.config.getInt("blocks.${e.block.type.name}.threshold", 0)
         if (threshold == 0) return
