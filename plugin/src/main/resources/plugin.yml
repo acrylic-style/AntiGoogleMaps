@@ -1,0 +1,17 @@
+name: AntiGoogleMaps
+main: xyz.acrylicstyle.antigooglemaps.plugin.AntiGoogleMaps
+version: 1.0.0
+api-version: 1.13
+commands:
+  antigooglemaps:
+    permission: antigooglemaps.admin
+    aliases: ["agm"]
+permissions:
+  antigooglemaps.admin:
+    description: "Access to all commands and enables notification"
+    default: false
+    children:
+      antigooglemaps.notification: true
+  antigooglemaps.notification:
+    description: "Gives ability to receive notification"
+    default: false
